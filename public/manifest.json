@@ -2,6 +2,7 @@
   "name": "Spotify Copy Track Name",
   "version": "0.0.0.1",
   "description": "Add a \"Copy Track Name\" button to Spotify",
+  "author": "https://github.com/edelvarden/",
   "manifest_version": 3,
   "content_scripts": [
     {
