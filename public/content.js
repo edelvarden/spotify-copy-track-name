@@ -16,7 +16,7 @@
    */
   const createCopyButton = (favoriteButtonClassList) => {
     const copyTrackNameButton = document.createElement("button")
-    copyTrackNameButton.classList.add("copy-button")
+    copyTrackNameButton.setAttribute("id", "copy-button")
     if (favoriteButtonClassList) {
       copyTrackNameButton.classList.add(...favoriteButtonClassList)
     }
@@ -117,6 +117,26 @@
 
     if (nowPlayingWidget) {
       nowPlayingWidget.appendChild(createCopyButton(favoriteButtonClassList))
+      document.head.appendChild(document.createElement("style")).innerHTML = `
+      #copy-button {
+          appearance: none;
+          border: none;
+          background: none;
+          width: 32px;
+          height: 32px;
+          cursor: pointer;
+          display: grid;
+          place-content: center;
+          user-select: none;
+          color: var(--text-subdued,#6a6a6a);
+          fill: var(--text-subdued,#6a6a6a);
+          transition: transform 0.187ms linear;
+      }
+      #copy-button:hover {
+        color: #fff;
+        fill: #fff;
+      }
+    `
     } else {
       afterDelay(waitForElements, 1000)
     }

@@ -7,7 +7,6 @@
   "content_scripts": [
     {
       "all_frames": true,
-      "css": ["./content.css"],
       "js": [ "./content.js" ],
       "matches": [ "https://*.spotify.com/*" ],
       "run_at": "document_start"
