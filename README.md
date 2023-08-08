@@ -1,6 +1,6 @@
 # spotify-copy-track-name
-A simple browser extension that adds a "Copy Track Name" button to Spotify website.
+A simple browser extension that adds a "Copy Track Name" button to the "Now Playing" panel on Spotify website.
 
 ![preview](preview.gif)
 
-The button copies the track title and subtitle to the clipboard as one line, in the format `Subtitle - Title`, where Subtitle is the artist or artists, and Title is the track name.
+The button copies the track title and subtitle to the clipboard as one line, in the format `Subtitle - Title`, where `Subtitle` is the artist or artists, and `Title` is the track name.
