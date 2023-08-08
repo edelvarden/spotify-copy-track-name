@@ -1,0 +1,21 @@
+{
+  "name": "Spotify Copy Track Name",
+  "version": "0.0.0.1",
+  "description": "Add a \"Copy Track Name\" button to Spotify",
+  "author": "https://github.com/edelvarden/",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": [ "./content.js" ],
+      "matches": [ "https://*.spotify.com/*" ],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "128": "./icons/icon-128.png",
+    "16": "./icons/icon-16.png",
+    "48": "./icons/icon-48.png"
+  },
+  "permissions": [ "tabs", "activeTab" ]
+}
