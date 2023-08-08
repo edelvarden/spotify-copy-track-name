@@ -9,7 +9,7 @@
     callback()
   }
 
-  const configureCopyButton = (favoriteButtonClassList) => {
+  const CopyButton = (favoriteButtonClassList) => {
     const copyTrackNameButton = document.createElement("button")
     copyTrackNameButton.innerHTML = `<span style="display: flex;"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20" fill="currentColor" ><path d="M216-96q-29.7 0-50.85-21.15Q144-138.3 144-168v-552h72v552h456v72H216Zm144-144q-29.7 0-50.85-21.15Q288-282.3 288-312v-480q0-29.7 21.15-50.85Q330.3-864 360-864h384q29.7 0 50.85 21.15Q816-821.7 816-792v480q0 29.7-21.15 50.85Q773.7-240 744-240H360Zm0-72h384v-480H360v480Zm0 0v-480 480Z"/></svg></span>`
 
@@ -40,15 +40,7 @@
       }
     })
 
-    const nowPlayingWidget = document.querySelector(
-      "[data-testid='now-playing-widget']"
-    )
-
-    if (nowPlayingWidget) {
-      nowPlayingWidget.appendChild(copyTrackNameButton)
-    } else {
-      afterDelay(waitForElements, 1000)
-    }
+    return copyTrackNameButton;
   }
 
   const waitForElements = async () => {
@@ -57,8 +49,17 @@
       ? Array.from(favoriteButton.classList)
       : null
 
-    configureCopyButton(favoriteButtonClassList)
+    const nowPlayingWidget = document.querySelector(
+      "[data-testid='now-playing-widget']"
+    )
+
+    if (nowPlayingWidget) {
+      nowPlayingWidget.appendChild(CopyButton(favoriteButtonClassList))
+    } else {
+      afterDelay(waitForElements, 1000)
+    }
   }
 
   window.addEventListener("load", waitForElements)
+
 })()
